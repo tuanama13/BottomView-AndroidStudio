@@ -8,59 +8,64 @@
     android:padding="10dp"
     tools:context=".Order_1">
 
-    <com.rengwuxian.materialedittext.MaterialEditText
-        android:id="@+id/input_nama"
+    <!-- Custome Topbar-->
+    <RelativeLayout
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="10dp"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Nama"
-        android:inputType="textPersonName"
-        android:textSize="16sp"
-        app:met_floatingLabel="highlight" />
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/order_back"
+            android:src="@drawable/back"
+            android:layout_width="30dp"
+            android:layout_height="30dp" />
+
+        <TextView
+            android:layout_toRightOf="@+id/order_back"
+            android:text="@string/order_title_1"
+            android:textColor="@color/bgBlack"
+            android:textSize="20sp"
+            android:layout_marginLeft="10dp"
+            android:fontFamily="@font/poppins_regular"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
 
 
-    <com.rengwuxian.materialedittext.MaterialEditText
-        android:id="@+id/input_nik"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Nomor Induk Kependudukan"
-        android:inputType="number"
-        android:textSize="16sp"
-        app:met_floatingLabel="highlight" />
+    </RelativeLayout>
+    <!-- /Custome Topbar-->
 
-    <com.rengwuxian.materialedittext.MaterialEditText
-        android:id="@+id/input_umur"
+    <LinearLayout
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Usia"
-        android:inputType="number"
-        android:textSize="16sp"
-        app:met_floatingLabel="highlight"
-        app:met_maxCharacters="2" />
+        android:layout_height="wrap_content">
 
-    <com.rengwuxian.materialedittext.MaterialEditText
-        android:id="@+id/input_alamat"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Alamat"
-        android:inputType="text"
-        android:textSize="16sp"
-        app:met_floatingLabel="highlight" />
+        <com.rengwuxian.materialedittext.MaterialEditText
+            android:id="@+id/input_tgl"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Tanggal"
+            android:inputType="textPersonName"
+            android:textSize="16sp"
 
-    <com.rengwuxian.materialedittext.MaterialEditText
-        android:id="@+id/input_institusi"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Asal Institusi"
-        android:inputType="textCapWords"
-        android:textSize="16sp"
-        app:met_floatingLabel="highlight" />
+            app:met_floatingLabel="normal" />
 
-    <Button
-        android:id="@+id/simpan_button"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="simpan"
-        android:textAllCaps="true"
-        android:textSize="16sp" />
+
+        <Button
+            android:id="@+id/simpan_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="simpan"
+            android:textAllCaps="true"
+            android:textSize="16sp" />
+
+    </LinearLayout>
+
+
+
 
 </LinearLayout>
