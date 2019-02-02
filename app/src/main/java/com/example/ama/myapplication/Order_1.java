@@ -2,9 +2,7 @@ package com.example.ama.myapplication;
 
 import android.app.Activity;
 import android.app.DatePickerDialog;
-import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.widget.CardView;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
@@ -47,6 +45,7 @@ public class Order_1 extends Activity {
             @Override
             public void onClick(View view) {
 
+                _intput_tgl.setText("");
                 c = Calendar.getInstance();
 //                int hari = c.get(Calendar.DAY_OF_WEEK);
                 int day = c.get(Calendar.DAY_OF_MONTH);
@@ -57,16 +56,19 @@ public class Order_1 extends Activity {
                 date_pic = new DatePickerDialog(Order_1.this, new DatePickerDialog.OnDateSetListener() {
                     @Override
                     public void onDateSet(DatePicker datePicker, int mYear, int mMonth, int mDay) {
+                      String hari = null;
+//                         hari = c.get(Calendar.DAY_OF_WEEK);
                          SimpleDateFormat simpleDateFormat = new SimpleDateFormat("EEEE");
-                         String hari = simpleDateFormat.format(c.getTime());
-//                         fungsi dayt = new fungsi();
-//                         dayt.harinya(hari);
-//                         String _hari = dayt.harinya(hari);
+                         hari = simpleDateFormat.format(c.get(Calendar.DAY_OF_WEEK));
+//
                         _intput_tgl.setText(hari+", " +mDay + "/" +(mMonth + 1) + "/"+ mYear);
+
 //                        _intput_tgl.setText();
                     }
                 }, day, month, year);
-                date_pic.getDatePicker().setMinDate(System.currentTimeMillis());
+//                date_pic.updateDate(day, month, year);
+//                date_pic.getDatePicker().setMinDate(System.currentTimeMillis());
+
                 date_pic.show();
             }
         });
@@ -77,5 +79,47 @@ public class Order_1 extends Activity {
                 finish();
             }
         });
+    }
+
+    public static String harinya(String hari){
+            String _harinya = null;
+
+            if (hari.equals("Sunday")){
+//            _harinya = new String("Minggu");
+                _harinya =  "Minggu";
+//                System.out.println(_harinya);
+            }
+            if(hari.equals("Monday")){
+                _harinya =  "Senin";
+//                System.out.println(_harinya);
+//            _harinya = new String("Senin");
+            }
+            if(hari.equals("Tuesday")){
+//            _harinya = new String("Selasa");
+                _harinya =  "Selasa";
+//                System.out.println(_harinya);
+            }
+            if(hari.equals("Wednesday")){
+//            _harinya = new String("Rabu");
+                _harinya =  "Rabu";
+//                System.out.println(_harinya);
+            }
+            if(hari.equals("Thursday")){
+//            _harinya = new String("Kamis");
+                _harinya =  "Kamis";
+//                System.out.println(_harinya);
+            }
+            if(hari.equals("Friday")){
+//            _harinya = new String("Jumat");
+                _harinya =  "Jumat";
+//                System.out.println(_harinya);
+            }
+            if(hari.equals("Saturday")) {
+//            _harinya = new String("Sabtu");
+                _harinya = "Sabtu";
+//                System.out.println(_harinya);
+            }
+
+           return new String(_harinya);
     }
 }
