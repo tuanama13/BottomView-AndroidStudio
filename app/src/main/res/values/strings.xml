@@ -10,4 +10,6 @@
     <string name="lapangan">Lapangan</string>
     <string name="title">OField</string>
     <string name="order_title_1">Pesan Lapangan</string>
+    <string name="navigation_account">Account</string>
+    <string name="navigation_order">Order</string>
 </resources>
