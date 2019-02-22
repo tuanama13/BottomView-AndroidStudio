@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="10dp"
+    android:background="@drawable/bg_app"
     tools:context=".Order_1">
 
     <!-- Custome Topbar-->
@@ -17,9 +18,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <ImageView
+        <ImageButton
+            android:layout_marginTop="3dp"
             android:id="@+id/order_back"
-            android:src="@drawable/back"
+            android:src="@drawable/ico_back"
+            android:background="@drawable/ripple_trans"
             android:layout_width="30dp"
             android:layout_height="30dp" />
 
@@ -28,6 +31,7 @@
             android:text="@string/order_title_1"
             android:textColor="@color/bgBlack"
             android:textSize="20sp"
+            android:layout_marginTop="3dp"
             android:layout_marginLeft="10dp"
             android:fontFamily="@font/poppins_regular"
             android:layout_width="wrap_content"
@@ -37,53 +41,76 @@
     </RelativeLayout>
     <!-- /Custome Topbar-->
 
-    <LinearLayout
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:orientation="vertical"
+    <android.support.v7.widget.CardView
+        android:layout_margin="10dp"
+        android:padding="10dp"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="12dp"
+        app:cardElevation="5dp">
 
         <LinearLayout
-            android:orientation="horizontal"
+            android:layout_margin="14dp"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:layout_marginBottom="20dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
             <ImageView
-                android:src="@drawable/icon_calendar"
+                android:id="@+id/ico_loc"
+                android:src="@drawable/loc_marker"
                 android:layout_marginTop="9dp"
                 android:layout_width="50dp"
                 android:layout_height="40dp" />
 
             <com.rengwuxian.materialedittext.MaterialEditText
-                android:id="@+id/input_tgl"
+                android:id="@+id/input_loc"
+                android:layout_toRightOf="@id/ico_loc"
                 android:layout_marginLeft="5dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Tanggal"
-                android:inputType="textPersonName"
-                android:textSize="16sp"
-
+                android:text="Pontianak"
+                android:hint="Lokasi"
+                android:inputType="text"
+                android:textSize="18sp"
                 app:met_floatingLabel="normal" />
-        </LinearLayout>
+        </RelativeLayout>
+            <RelativeLayout
+                android:layout_marginBottom="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:id="@+id/ico_cal"
+                    android:src="@drawable/icon_calendar"
+                    android:layout_marginTop="9dp"
+                    android:layout_width="50dp"
+                    android:layout_height="40dp" />
 
-        <!--<ImageButton-->
-            <!--android:src="@drawable/icon_search"-->
-            <!---->
-            <!--android:layout_width="match_parent"-->
-            <!--android:layout_height="wrap_content" />-->
-
-
-        <Button
+                <com.rengwuxian.materialedittext.MaterialEditText
+                    android:id="@+id/input_tgl"
+                    android:layout_toRightOf="@id/ico_cal"
+                    android:layout_marginLeft="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Tanggal"
+                    android:inputType="text"
+                    android:textSize="18sp"
+                    app:met_floatingLabel="normal" />
+            </RelativeLayout>
+         <Button
             android:id="@+id/simpan_button"
+            android:background="@drawable/ripple_btn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Cari"
             android:textAllCaps="true"
             android:textSize="16sp" />
 
-    </LinearLayout>
+        </LinearLayout>
 
-
-
+    </android.support.v7.widget.CardView>
 
 </LinearLayout>

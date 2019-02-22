@@ -21,6 +21,7 @@ import butterknife.ButterKnife;
 
 public class Order_1 extends Activity {
     @BindView(R.id.input_tgl) TextView _intput_tgl;
+    @BindView(R.id.input_loc) TextView _intput_loc;
     @BindView(R.id.simpan_button) Button _btntgl;
     @BindView(R.id.order_back) ImageView _back;
 
@@ -35,13 +36,14 @@ public class Order_1 extends Activity {
 
         ButterKnife.bind(this);
         _intput_tgl.setFocusable(false);
+        _intput_loc.setFocusable(false);
 
 //        SimpleDateFormat df_hari = new SimpleDateFormat("EEEE");
         String format_hari = "EE";
         SimpleDateFormat sdf = new SimpleDateFormat(format_hari);
 
 //        String hari_ = harinya(sdf.format(c.getTime()));
-        SimpleDateFormat df = new SimpleDateFormat("dd MM yyyy");
+        SimpleDateFormat df = new SimpleDateFormat("dd MMM yyyy");
         Date date = new Date();
         _intput_tgl.setText(harinya(sdf.format(date))+", "+df.format(date));
 
@@ -72,7 +74,7 @@ public class Order_1 extends Activity {
 //                        c.set(Calendar.DAY_OF_WEEK, hari);
 //                        Date d = new Date();
 //                        int day = 0;
-                        String format = "dd MM yyy";
+                        String format = "dd MMM yyy";
                         SimpleDateFormat simpleDateFormat = new SimpleDateFormat(format);
 
                         String format_hari = "EE";

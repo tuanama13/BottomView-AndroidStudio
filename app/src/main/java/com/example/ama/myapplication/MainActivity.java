@@ -54,6 +54,7 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
 
             getSupportFragmentManager()
                     .beginTransaction()
+                    .setTransition(R.transition.slide_in)
                     .replace(R.id.main_container, fragment)
                     .commit();
 
@@ -73,11 +74,11 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
                 break;
 
             case R.id.navigation_dashboard:
-                fragment = new DashboardFragment();
+                fragment = new OrderFragment();
                 break;
 
             case R.id.navigation_notifications:
-                fragment = new NotifFragment();
+                fragment = new AccountFragment();
                 break;
         }
 
