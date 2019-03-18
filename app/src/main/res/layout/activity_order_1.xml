@@ -95,10 +95,31 @@
                     android:layout_marginLeft="5dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Tanggal"
+                    android:hint="Tanggal Booking"
                     android:inputType="text"
                     android:textSize="18sp"
                     app:met_floatingLabel="normal" />
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_marginBottom="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:id="@+id/ico_jam"
+                    android:src="@drawable/ic_clock"
+                    android:layout_marginTop="10dp"
+                    android:layout_width="50dp"
+                    android:layout_height="30dp" />
+
+                <Spinner
+                    android:id="@+id/input_jam"
+                    android:layout_toEndOf="@id/ico_jam"
+                    android:layout_marginTop="5dp"
+                    android:entries="@array/jam_booking"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"></Spinner>
+
+
             </RelativeLayout>
          <Button
             android:id="@+id/simpan_button"
