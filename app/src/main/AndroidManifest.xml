@@ -25,7 +25,8 @@
         <activity android:name=".Order_1" />
         <activity android:name=".registrasi" />
         <activity android:name=".login" />
-        <activity android:name=".BookingListActivity"></activity>
+        <activity android:name=".BookingListActivity" />
+        <activity android:name=".DetailBookingActivity"></activity>
     </application>
 
 </manifest>

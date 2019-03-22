@@ -9,4 +9,7 @@ import retrofit2.http.QueryMap;
 public interface APIService {
     @GET("api/booking/read_booking_list.php")
     Call<com.example.ama.myapplication.Booking.Value> viewListBooking(@QueryMap HashMap<String, String> params);
+
+    @GET("api/booking/read_booking_list.php")
+    Call<com.example.ama.myapplication.Booking.Message> viewListBookingMessage(@QueryMap HashMap<String, String> params);
 }

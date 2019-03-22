@@ -1,5 +1,6 @@
 package com.example.ama.myapplication;
 
+import android.os.Message;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.DefaultItemAnimator;
@@ -39,8 +40,12 @@ public class BookingListActivity extends AppCompatActivity {
     TextView _tgl_pilih;
     @BindView(R.id.jam_pilih)
     TextView _jam_pilih;
+    @BindView(R.id.message_list_booking)
+    TextView _message_booking;
     @BindView(R.id.order_back)
     ImageView _back;
+    @BindView(R.id.img_message_booking)
+    ImageView _img_message;
 //    @BindView(R.id.jam_booking_list)
 //    TextView _jam_booking_list;
     public String tgl;
@@ -73,8 +78,6 @@ public class BookingListActivity extends AppCompatActivity {
         _back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-//                Intent i = new Intent(BookingListActivity.this,Order_1.class);
-//                startActivity(i);
                 finish();
             }
         });
@@ -86,29 +89,46 @@ public class BookingListActivity extends AppCompatActivity {
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
 
-        HashMap<String, String> params = new HashMap<>();
+        final HashMap<String, String> params = new HashMap<>();
         params.put("tgl_booking", tgl_);
         params.put("jam_booking", jam_);
 
-        APIService api = retrofit.create(APIService.class);
+        final APIService api = retrofit.create(APIService.class);
         Call<com.example.ama.myapplication.Booking.Value> call = api.viewListBooking(params);
         call.enqueue(new Callback<com.example.ama.myapplication.Booking.Value>() {
             @Override
             public void onResponse(Call<com.example.ama.myapplication.Booking.Value> call, Response<com.example.ama.myapplication.Booking.Value> response) {
-                progressBar.setVisibility(View.GONE);
+                if (response.body().getData()== null){
+                    Call<com.example.ama.myapplication.Booking.Message> callM = api.viewListBookingMessage(params);
+                    callM.enqueue(new Callback<com.example.ama.myapplication.Booking.Message>() {
+                        @Override
+                        public void onResponse(Call<com.example.ama.myapplication.Booking.Message> call, Response<com.example.ama.myapplication.Booking.Message> response) {
+//                            Log.d("Message", "onResponse: "+response.body().getMessage());
+                            progressBar.setVisibility(View.GONE);
+                            _message_booking.setText(response.body().getMessage());
+                            _img_message.setImageResource(R.drawable.message_img);
+                        }
 
-                data = response.body().getData();
-                String tes = Integer.toString(data.size());
-                viewAdapter = new BookingListAdapter(BookingListActivity.this, data,jam);
-                viewAdapter.notifyDataSetChanged();
-                recyclerView.setAdapter(viewAdapter);
-                response.isSuccessful();
-                Log.d("TES Booking", Integer.toString(data.size()));
+                        @Override
+                        public void onFailure(Call<com.example.ama.myapplication.Booking.Message> call, Throwable t) {
+                           android.widget.Toast.makeText(getApplicationContext(),"Error : "+t ,android.widget.Toast.LENGTH_LONG).show();
+                        }
+                    });
+                }else {
+                    progressBar.setVisibility(View.GONE);
+
+                    data = response.body().getData();
+                    String tes = Integer.toString(data.size());
+                    viewAdapter = new BookingListAdapter(BookingListActivity.this, data,jam);
+                    viewAdapter.notifyDataSetChanged();
+                    recyclerView.setAdapter(viewAdapter);
+                    response.isSuccessful();
+                }
             }
 
             @Override
             public void onFailure(Call<com.example.ama.myapplication.Booking.Value> call, Throwable t) {
-
+                android.widget.Toast.makeText(getApplicationContext(),"Error : "+t ,android.widget.Toast.LENGTH_LONG).show();
             }
         });
     }
