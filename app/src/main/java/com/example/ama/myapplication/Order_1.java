@@ -61,14 +61,6 @@ public class Order_1 extends Activity {
             }
         });
 
-
-
-
-
-
-
-
-
         _intput_tgl.setFocusable(false);
         _intput_loc.setFocusable(false);
 
@@ -149,10 +141,13 @@ public class Order_1 extends Activity {
             @Override
             public void onClick(View view) {
                 Intent i = new Intent(Order_1.this,BookingListActivity.class);
+//                i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 i.putExtra("tgl", tgl);
                 i.putExtra("jam", jam);
                 startActivity(i);
                 Log.d("TES", _intput_jam.getSelectedItem().toString());
+                overridePendingTransition(android.R.anim.slide_in_left, android.R.anim.slide_out_right);
+//                finish();
             }
         });
     }

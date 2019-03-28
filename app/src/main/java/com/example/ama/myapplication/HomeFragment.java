@@ -32,7 +32,10 @@ public class HomeFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getActivity(), Order_1.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 getActivity().startActivity(intent);
+                getActivity().overridePendingTransition(android.R.anim.slide_in_left, android.R.anim.slide_out_right);
+
             }
         });
 

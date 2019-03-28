@@ -66,7 +66,7 @@ public class BookingListActivity extends AppCompatActivity {
 //        ((Search) this.getApplication()).setJam_(jam);
 //        _jam_booking_list.setText(jam);
 
-        viewAdapter = new BookingListAdapter(this, data, jam);
+        viewAdapter = new BookingListAdapter(this, data, jam, tgl);
         RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getApplicationContext());
         recyclerView.setLayoutManager(mLayoutManager);
         recyclerView.setItemAnimator(new DefaultItemAnimator());
@@ -119,7 +119,7 @@ public class BookingListActivity extends AppCompatActivity {
 
                     data = response.body().getData();
                     String tes = Integer.toString(data.size());
-                    viewAdapter = new BookingListAdapter(BookingListActivity.this, data,jam);
+                    viewAdapter = new BookingListAdapter(BookingListActivity.this, data,jam, tgl);
                     viewAdapter.notifyDataSetChanged();
                     recyclerView.setAdapter(viewAdapter);
                     response.isSuccessful();

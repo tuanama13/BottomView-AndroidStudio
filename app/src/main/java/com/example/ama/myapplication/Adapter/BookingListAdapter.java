@@ -1,5 +1,6 @@
 package com.example.ama.myapplication.Adapter;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.support.annotation.NonNull;
@@ -12,6 +13,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.example.ama.myapplication.Booking.Data;
+import com.example.ama.myapplication.BookingListActivity;
 import com.example.ama.myapplication.DetailBookingActivity;
 import com.example.ama.myapplication.R;
 
@@ -22,15 +24,17 @@ import butterknife.ButterKnife;
 
 public class BookingListAdapter extends RecyclerView.Adapter<BookingListAdapter.ViewHolder> {
     String jam;
+    String tgl;
     private Context context;
     List<com.example.ama.myapplication.Booking.Data> data;
 
 
-    public BookingListAdapter(Context context, List<Data> data, String jam){
+    public BookingListAdapter(Context context, List<Data> data, String jam, String tgl){
 
         this.context = context;
         this.data = data;
         this.jam = jam;
+        this.tgl = tgl;
     }
 
 
@@ -59,8 +63,16 @@ public class BookingListAdapter extends RecyclerView.Adapter<BookingListAdapter.
             public void onClick(View view) {
 //                Snackbar.make(view, "Clik Element"+datas.getNama_lapangan(), Snackbar.LENGTH_LONG).show();
                 Intent intent = new Intent(context, DetailBookingActivity.class);
+                intent.putExtra("id_lap", datas.getId_lapangan());
+                intent.putExtra("nama_lap", datas.getNama_lapangan());
                 intent.putExtra("harga", datas.getHarga_lapangan());
+                intent.putExtra("id_mitra", datas.getId_mitra());
+                intent.putExtra("nama_mitra", datas.getNama_mitra());
+                intent.putExtra("jam_booking", jam);
+                intent.putExtra("tgl_booking", tgl);
                 context.startActivity(intent);
+//                context.overridePendingTransition(android.R.anim.slide_in_left, android.R.anim.slide_out_right);
+//                ((Activity)context).finish();
             }
         });
 

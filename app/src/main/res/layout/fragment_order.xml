@@ -1,14 +1,128 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".OrderFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <!-- Custome Topbar-->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginBottom="5dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginRight="0dp"
+        android:layout_marginTop="0dp"
+        android:background="@color/colorPrimary">
+
+        <TextView
+            android:id="@+id/judul_toolbar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="15dp"
+            android:fontFamily="@font/poppins_bold"
+            android:text="My Order"
+            android:textColor="@color/bgWhite_alt"
+            android:textSize="20sp" />
+    </RelativeLayout>
+    <!-- /Custome Topbar-->
+
+    <!--<RelativeLayout-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content">-->
+
+    <!--<ImageView-->
+    <!--android:id="@+id/img_my_order"-->
+    <!--android:layout_marginTop="100dp"-->
+    <!--android:layout_centerHorizontal="true"-->
+    <!--android:layout_width="130dp"-->
+    <!--android:layout_height="130dp"-->
+    <!--android:src="@drawable/message_img" />-->
+
+    <!--<TextView-->
+    <!--android:id="@+id/message_myorder"-->
+    <!--android:layout_marginTop="10dp"-->
+    <!--android:layout_below="@+id/img_my_order"-->
+    <!--android:layout_centerHorizontal="true"-->
+    <!--android:text="@string/anda_belum_melakukan_pemesanan"-->
+    <!--android:maxLines="2"-->
+    <!--android:textSize="16sp"-->
+    <!--android:textColor="@color/bgBlack_alt"-->
+    <!--android:textAlignment="center"-->
+    <!--android:layout_width="190dp"-->
+    <!--android:layout_height="wrap_content" />-->
+
+    <!--<Button-->
+    <!--android:id="@+id/btn_toorder_myorder"-->
+    <!--android:layout_below="@+id/message_myorder"-->
+    <!--android:text="Pesan Sekarang"-->
+    <!--android:background="@drawable/ripple_btn"-->
+    <!--android:layout_marginTop="10dp"-->
+    <!--android:layout_centerHorizontal="true"-->
+    <!--android:layout_width="180dp"-->
+    <!--android:layout_height="wrap_content" />-->
+
+    <!--</RelativeLayout>-->
+
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="Dashboard" />
+        android:layout_marginBottom="55dp"
+        android:fillViewport="true">
 
-</FrameLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/img_myorder"
+                android:layout_width="130dp"
+                android:layout_height="130dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="50dp" />
+
+            <TextView
+                android:id="@+id/message_myorder"
+                android:layout_below="@+id/img_myorder"
+                android:layout_width="200dp"
+                android:textAlignment="center"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="35dp"
+                android:fontFamily="@font/poppins_light"
+                android:textColor="@color/bgBlack_alt"
+                android:textSize="18sp" />
+
+            <Button
+                android:id="@+id/btn_toorder_myorder"
+                android:layout_below="@+id/message_myorder"
+                android:layout_width="180dp"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/ripple_btn"
+                android:text="Pesan Sekarang"
+                android:visibility="gone" />
+
+            <ProgressBar
+                android:layout_below="@id/img_myorder"
+                android:id="@+id/progress_bar_myorder"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true" />
+
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/recycleView_myorder"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+            </android.support.v7.widget.RecyclerView>
+        </RelativeLayout>
+    </ScrollView>
+
+
+</LinearLayout>

@@ -145,6 +145,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
                 <TextView
+                    android:id="@+id/txtnama_detail"
                     android:text="Ambrosius Ama Tuan"
                     android:textColor="@color/bgBlack_alt"
                     android:textSize="15sp"
@@ -152,10 +153,12 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
                 <TextView
+                    android:id="@+id/txtemail_detail"
                     android:text="tuanama7@gmail.com"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
                 <TextView
+                    android:id="@+id/txtkontak_detail"
                     android:text="082250483021"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
@@ -197,6 +200,7 @@
             </RelativeLayout>
 
         <Button
+            android:id="@+id/btn_pembayaran"
             android:layout_margin="15dp"
             android:padding="5dp"
             android:background="@drawable/ripple_btn"
@@ -205,6 +209,17 @@
             android:textSize="16sp"
             android:textColor="@color/bgWhite_alt"
             android:text="Lanjutkan Ke Pembayaran"/>
+
+        <!--<Button-->
+            <!--android:id="@+id/btn_pembayaran_indomaret"-->
+            <!--android:layout_margin="15dp"-->
+            <!--android:padding="5dp"-->
+            <!--android:background="@drawable/ripple_btn"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:textSize="16sp"-->
+            <!--android:textColor="@color/bgWhite_alt"-->
+            <!--android:text="Lanjutkan Ke Pembayaran"/>-->
 
 
 

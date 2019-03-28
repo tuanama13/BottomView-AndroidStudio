@@ -2,6 +2,7 @@ package com.example.ama.myapplication;
 
 
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.Fragment;
@@ -9,9 +10,10 @@ import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener {
-
+    boolean doubleBackToExitPressedOnce = false;
     private TextView mTextMessage;
     private Fragment fragment;
     private FragmentManager fragmentManager;
@@ -54,7 +56,7 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
 
             getSupportFragmentManager()
                     .beginTransaction()
-                    .setTransition(R.transition.slide_in)
+                    .setTransition(android.R.anim.slide_in_left)
                     .replace(R.id.main_container, fragment)
                     .commit();
 
@@ -83,5 +85,26 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
         }
 
         return loadFragment(fragment);
+    }
+
+
+
+    @Override
+    public void onBackPressed() {
+        if (doubleBackToExitPressedOnce) {
+            super.onBackPressed();
+            return;
+        }
+
+        this.doubleBackToExitPressedOnce = true;
+        Toast.makeText(this, "Please click BACK again to exit", Toast.LENGTH_SHORT).show();
+
+        new Handler().postDelayed(new Runnable() {
+
+            @Override
+            public void run() {
+                doubleBackToExitPressedOnce=false;
+            }
+        }, 2000);
     }
 }

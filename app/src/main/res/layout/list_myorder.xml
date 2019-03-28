@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:padding="7dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/card_myoder"
+        android:layout_marginBottom="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:padding="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/nama_mitra_myorder"
+                android:text="Nama Mitra"
+                android:textSize="15sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <ImageView
+                android:layout_marginLeft="5dp"
+                android:layout_toEndOf="@id/nama_mitra_myorder"
+                android:id="@+id/img_mitra_myoder"
+                android:src="@drawable/ic_account"
+                android:layout_width="25dp"
+                android:layout_height="22dp" />
+
+            <TextView
+                android:layout_marginTop="5dp"
+                android:layout_below="@id/nama_mitra_myorder"
+                android:id="@+id/jam_booking_myorder"
+                android:textColor="@color/bgBlack_alt"
+                android:text="07:00"
+                android:textSize="20sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <LinearLayout
+                android:layout_below="@id/nama_mitra_myorder"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="20dp"
+                android:orientation="horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:textSize="28sp"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:text=">"
+                    android:layout_marginRight="25dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+
+
+
+            <TextView
+                android:layout_marginTop="5dp"
+                android:layout_below="@id/jam_booking_myorder"
+                android:id="@+id/nama_lap_myorder"
+                android:text="Nama Lapangan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:layout_marginTop="15dp"
+                android:layout_below="@id/nama_lap_myorder"
+                android:id="@+id/status_booking_myorder"
+                android:textSize="20sp"
+                android:padding="5dp"
+                android:textStyle="bold"
+                android:text="Status"
+                android:background="@drawable/border_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+        </RelativeLayout>
+
+
+
+
+    </android.support.v7.widget.CardView>
+
+
+
+</LinearLayout>

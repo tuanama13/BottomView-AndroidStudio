@@ -12,4 +12,7 @@
     <string name="order_title_1">Pesan Lapangan</string>
     <string name="navigation_account">Account</string>
     <string name="navigation_order">My Order</string>
+    <string name="anda_belum_melakukan_pemesanan">Anda Belum Melakukan Pemesanan</string>
+    <string name="result">Terima Kasih, Pesanan Anda Sedang Kami Proses</string>
+    <string name="menu2">Tips &amp; Trik</string>
 </resources>

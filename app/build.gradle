@@ -1,11 +1,12 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 27
+    flavorDimensions "default"
+    compileSdkVersion 28
     defaultConfig {
         applicationId "com.example.ama.myapplication"
         minSdkVersion 21
-        targetSdkVersion 27
+        targetSdkVersion 28
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
@@ -16,19 +17,35 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    productFlavors {
+        sandbox {
+            buildConfigField "String", "BASE_URL", "\"https://airless-shout.000webhostapp.com/checkout.php/\""
+            buildConfigField "String", "CLIENT_KEY", "\"SB-Mid-client-z3cWozTaV56piZD7\""
+        }
+
+//        production {
+//            buildConfigField "String", "BASE_URL", "\"https://webhook.site/#/b0475cd6-0a25-4ec8-822e-4bfe2e9cbb06/03abbb34-392d-41b3-8673-5eb062f19fd1/1/\""
+//            buildConfigField "String", "CLIENT_KEY", "\"VT-CLIENT-production-client-key\""
+//        }
+    }
+}
+
+repositories {
+    mavenCentral()
+    maven { url 'http://dl.bintray.com/pt-midtrans/maven' }
 }
 
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     //noinspection GradleCompatible
-    implementation 'com.android.support:appcompat-v7:27.1.1'
-    implementation 'com.android.support:cardview-v7:27.1.1'
-    implementation 'com.android.support:recyclerview-v7:27.1.1'
-    implementation 'com.android.support:design:27.1.1'
-    implementation 'com.android.support:support-v4:27.1.1'
-    implementation 'com.android.support:gridlayout-v7:27.1.1'
+    implementation 'com.android.support:appcompat-v7:28.0.0'
+    implementation 'com.android.support:cardview-v7:28.0.0'
+    implementation 'com.android.support:recyclerview-v7:28.0.0'
+    implementation 'com.android.support:design:28.0.0'
+    implementation 'com.android.support:support-v4:28.0.0'
+    implementation 'com.android.support:gridlayout-v7:28.0.0'
     implementation 'com.android.support.constraint:constraint-layout:1.1.2'
-    implementation 'com.android.support:support-vector-drawable:27.1.1'
+    implementation 'com.android.support:support-vector-drawable:28.0.0'
     implementation 'com.jakewharton:butterknife:8.8.1'
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
     implementation 'com.rengwuxian.materialedittext:library:2.1.4'
@@ -42,5 +59,7 @@ dependencies {
     implementation 'com.squareup.retrofit2:converter-gson:2.5.0'
     implementation 'com.github.bumptech.glide:glide:4.9.0'
     implementation 'com.github.ganfra:material-spinner:2.0.0'
-//    implementation 'com.midtrans:uikit:1.22.0-SANDBOX'
+    implementation 'com.midtrans:uikit:1.21.2-SANDBOX'
+//    implementation 'ai.devsupportmidtrans'
+    sandboxImplementation 'com.midtrans:uikit:1.21.2-SANDBOX'
 }

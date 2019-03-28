@@ -8,35 +8,28 @@
     android:background="@drawable/bg_app"
     tools:context=".AccountFragment">
 
+    <!-- Custome Topbar-->
     <RelativeLayout
-        android:layout_marginTop="10dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="20dp"
-        android:layout_marginBottom="10dp"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <ImageButton
-            android:layout_marginTop="3dp"
-            android:id="@+id/order_back"
-            android:src="@drawable/ico_back"
-            android:background="@null"
-            android:layout_width="30dp"
-            android:layout_height="30dp" />
+        android:layout_height="60dp"
+        android:layout_marginBottom="5dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginRight="0dp"
+        android:layout_marginTop="0dp"
+        android:background="@color/colorPrimary">
 
         <TextView
-            android:layout_toRightOf="@+id/order_back"
-            android:layout_marginTop="3dp"
-            android:text="Account"
-            android:textColor="@color/bgBlack"
-            android:textSize="20sp"
-            android:layout_marginLeft="6dp"
-            android:fontFamily="@font/poppins_regular"
+            android:id="@+id/judul_toolbar_account"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-
-
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="15dp"
+            android:fontFamily="@font/poppins_bold"
+            android:text="Account"
+            android:textColor="@color/bgWhite_alt"
+            android:textSize="20sp" />
     </RelativeLayout>
+    <!-- /Custome Topbar-->
 
     <de.hdodenhof.circleimageview.CircleImageView
 
@@ -139,6 +132,7 @@
             android:layout_height="wrap_content">
 
             <Button
+                android:id="@+id/btn_bantuan"
                 android:padding="5dp"
                 android:layout_margin="15dp"
                 android:background="@drawable/ripple_btn"
@@ -150,6 +144,7 @@
                 android:textSize="16sp"
                 android:text="Bantuan"/>
             <Button
+                android:id="@+id/btn_tentang"
                 android:layout_margin="15dp"
                 android:padding="5dp"
                 android:background="@drawable/ripple_btn"
