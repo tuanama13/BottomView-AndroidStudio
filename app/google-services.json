@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "57891428612",
+    "firebase_url": "https://ofield-webid.firebaseio.com",
+    "project_id": "ofield-webid",
+    "storage_bucket": "ofield-webid.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:57891428612:android:7df2a81721bb3449",
+        "android_client_info": {
+          "package_name": "com.example.ama.myapplication"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "57891428612-8j6u7ug51v5pnmj7nasn9ki5osh6eum4.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.ama.myapplication",
+            "certificate_hash": "a00239088f478ecd8e8745232f2932143eaa4506"
+          }
+        },
+        {
+          "client_id": "57891428612-rk40qt490ko4aab8fcbnl3qojq9vo0bi.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDp-iXhTlrNb5ydGG-UbJ3FmSGO8XE4xck"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "57891428612-rk40qt490ko4aab8fcbnl3qojq9vo0bi.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

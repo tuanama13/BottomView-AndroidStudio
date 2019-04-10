@@ -29,10 +29,13 @@ public class AccountFragment extends Fragment {
         btnBantuan.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getActivity(), BantuanActivity.class);
-//                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                getActivity().startActivity(intent);
-                getActivity().overridePendingTransition(android.R.anim.slide_in_left, android.R.anim.slide_out_right);
+//                Intent intent = new Intent(getActivity(), BantuanActivity.class);
+////                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+//                getActivity().startActivity(intent);
+//                getActivity().overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
+
+                Intent i = new Intent(getActivity(), login.class);
+                getActivity().startActivity(i);
             }
         });
 
@@ -42,7 +45,7 @@ public class AccountFragment extends Fragment {
                 Intent intent = new Intent(getActivity(), TentangActivity.class);
 //                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 getActivity().startActivity(intent);
-                getActivity().overridePendingTransition(android.R.anim.slide_in_left, android.R.anim.slide_out_right);
+                getActivity().overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
             }
         });
 

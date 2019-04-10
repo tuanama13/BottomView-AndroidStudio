@@ -2,8 +2,10 @@ package com.example.ama.myapplication;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -13,6 +15,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
@@ -50,6 +53,10 @@ public class OrderFragment extends Fragment {
     TextView txtMessageMyorder;
     @BindView(R.id.img_myorder)
     ImageView imgMyorder;
+    @BindView(R.id.SWLayout)
+    SwipeRefreshLayout swLayout;
+    @BindView(R.id.LLayout)
+    LinearLayout lLayout;
 //    @BindView(R.id.status_booking_myorder)
 //    TextView txtStatusMyorder_;
 
@@ -69,15 +76,26 @@ public class OrderFragment extends Fragment {
             }
         });
 
-
-
         myoderAdapter = new MyorderAdapter(getActivity().getApplicationContext(), data);
         RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getActivity());
         recyclerView.setAdapter(myoderAdapter);
         recyclerView.setLayoutManager(mLayoutManager);
         recyclerView.setItemAnimator(new DefaultItemAnimator());
-
         loadMyorder();
+//        Log.d("Myorder", "onCreateView: ");
+        swLayout.setColorSchemeResources(R.color.colorAccent, R.color.colorPrimary);
+        swLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                new Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        swLayout.setRefreshing(false);
+                        loadMyorder();
+                    }
+                }, 3000);
+            }
+        });
 
         return rootView;
     }
@@ -121,10 +139,8 @@ public class OrderFragment extends Fragment {
                     myoderAdapter.notifyDataSetChanged();
                     recyclerView.setAdapter(myoderAdapter);
                     response.isSuccessful();
-                }
-//
-// btnToOrder.setVisibility(View.VISIBLE);
 
+                }
             }
 
             @Override

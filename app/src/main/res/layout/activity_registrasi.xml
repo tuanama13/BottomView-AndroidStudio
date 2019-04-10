@@ -1,69 +1,115 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical"
     android:layout_width="match_parent"
+    android:background="@drawable/bg_app_4"
     android:layout_height="match_parent"
     tools:context=".registrasi">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/poppins_bold"
+                android:text="OFIELD"
+                android:textColor="@color/white"
+                android:textSize="50sp" />
 
-    <EditText
-        android:layout_margin="8dp"
-        android:inputType="textPersonName"
-        android:hint="Masukkan Nama Lengkap"
-        android:id="@+id/editTextnama"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
-    <EditText
-        android:layout_margin="8dp"
-        android:inputType="textPersonName"
-        android:hint="Masukkan Username"
-        android:id="@+id/editTextUsername"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
-    <EditText
-        android:hint="Masukkan password"
-        android:layout_margin="8dp"
-        android:id="@+id/editTextPassword"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:inputType="textPassword" />
-    <EditText
-        android:hint="Ulangi password"
-        android:layout_margin="8dp"
-        android:id="@+id/editTextPassword1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:inputType="textPassword" />
-    <EditText
-        android:hint="Masukkan Alamat"
-        android:layout_margin="10dp"
-        android:id="@+id/editTextAlamat"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:inputType="" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="20dp"
+                android:layout_marginTop="0dp"
+                android:fontFamily="@font/poppins_bold"
+                android:text="Registrasi"
+                android:textColor="@color/white"
+                android:textSize="20sp" />
 
-    <Spinner
-        android:id="@+id/spinner1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="8dp"
-        android:spinnerMode="dropdown">
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginBottom="20dp"
+                app:cardCornerRadius="10dp"
+                app:cardElevation="5dp">
 
-    </Spinner>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="10dp">
 
-    <Button
-        android:id="@+id/btnDaftar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="8dp"
-        android:text="Daftar" />
+                    <EditText
+                        android:id="@+id/editTextnama"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="8dp"
+                        android:background="@drawable/border_text"
+                        android:padding="15dp"
+                        android:hint="Masukkan Nama Lengkap"
+                        android:inputType="textPersonName" />
 
-    <TextView
-        android:layout_margin="8dp"
-        android:id="@+id/textViewSignin"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Already register ? Sign in" />
+                    <EditText
+                        android:id="@+id/editTextUsername"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="8dp"
+                        android:background="@drawable/border_text"
+                        android:padding="15dp"
+                        android:hint="Masukkan Email"
+                        android:inputType="textEmailAddress" />
 
-</LinearLayout>
+                    <EditText
+                        android:id="@+id/editTextPassword"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="8dp"
+                        android:background="@drawable/border_text"
+                        android:padding="15dp"
+                        android:hint="Masukkan password"
+                        android:inputType="textPassword" />
+
+                    <EditText
+                        android:id="@+id/editTextPassword1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="8dp"
+                        android:background="@drawable/border_text"
+                        android:padding="15dp"
+                        android:hint="Ulangi password"
+                        android:inputType="textPassword" />
+
+                    <Button
+                        android:id="@+id/btnDaftar"
+                        android:background="@drawable/ripple_btn"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="8dp"
+                        android:textSize="18sp"
+                        android:textColor="@color/white"
+                        android:text="Daftar" />
+
+                    <TextView
+                        android:id="@+id/textViewSignin"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="8dp"
+                        android:text="Already register ? Sign in" />
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+
+        </LinearLayout>
+    </ScrollView>
+
+
+</FrameLayout>

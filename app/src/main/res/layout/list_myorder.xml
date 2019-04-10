@@ -13,7 +13,7 @@
         android:layout_height="wrap_content">
 
         <RelativeLayout
-            android:padding="10dp"
+            android:padding="20dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
@@ -21,6 +21,7 @@
                 android:id="@+id/nama_mitra_myorder"
                 android:text="Nama Mitra"
                 android:textSize="15sp"
+                android:textColor="@color/colorPrimary"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
 
@@ -31,36 +32,34 @@
                 android:src="@drawable/ic_account"
                 android:layout_width="25dp"
                 android:layout_height="22dp" />
-
             <TextView
                 android:layout_marginTop="5dp"
                 android:layout_below="@id/nama_mitra_myorder"
+                android:id="@+id/tgl_booking_myorder"
+                android:textSize="16dp"
+                android:text="xxxx-xx-xx"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:layout_marginTop="5dp"
+                android:layout_below="@id/tgl_booking_myorder"
                 android:id="@+id/jam_booking_myorder"
+                android:fontFamily="@font/poppins_bold"
                 android:textColor="@color/bgBlack_alt"
                 android:text="07:00"
                 android:textSize="20sp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
 
-            <LinearLayout
-                android:layout_below="@id/nama_mitra_myorder"
+            <ImageView
+                android:layout_marginTop="40dp"
                 android:layout_alignParentRight="true"
-                android:layout_marginTop="20dp"
-                android:orientation="horizontal"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
-
-                <TextView
-                    android:textSize="28sp"
-                    android:textColor="@color/colorPrimaryDark"
-                    android:text=">"
-                    android:layout_marginRight="25dp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
-
-            </LinearLayout>
-
-
+                android:layout_below="@id/nama_mitra_myorder"
+                android:src="@drawable/ic_arrow_right"
+                android:tint="@color/colorPrimaryDark"
+                android:layout_width="40dp"
+                android:layout_height="40dp" />
 
             <TextView
                 android:layout_marginTop="5dp"

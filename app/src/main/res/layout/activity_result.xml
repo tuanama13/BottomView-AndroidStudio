@@ -16,7 +16,7 @@
 
     <TextView
         android:layout_marginTop="20dp"
-        android:textSize="23sp"
+        android:textSize="20sp"
         android:textAlignment="center"
         android:text="@string/result"
         android:fontFamily="@font/poppins_bold"

@@ -1,9 +1,274 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:orientation="vertical"
     android:layout_height="match_parent"
     tools:context=".MyOrderDetailActivity">
+    <!-- Custome Topbar-->
+    <RelativeLayout
+        android:background="@color/colorPrimary"
+        android:layout_marginTop="0dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginRight="0dp"
+        android:layout_marginBottom="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="60dp">
 
-</android.support.constraint.ConstraintLayout>
+        <ImageButton
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="15dp"
+            android:id="@+id/order_back"
+            android:src="@drawable/ico_back"
+            android:background="@drawable/ripple_trans"
+            android:layout_width="30dp"
+            android:layout_height="30dp" />
+
+        <TextView
+            android:layout_toRightOf="@+id/order_back"
+            android:id="@+id/judul_toolbar_detail_myorder"
+            android:text="Lapangan A"
+            android:textColor="@color/bgBlack"
+            android:textSize="18sp"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="10dp"
+            android:fontFamily="@font/poppins_regular"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:layout_toRightOf="@+id/order_back"
+            android:layout_below="@+id/judul_toolbar_detail_myorder"
+            android:id="@+id/txtorder_id_detail_myorder"
+            android:text="Order ID :"
+            android:textColor="@color/bgBlack"
+            android:textSize="12sp"
+            android:layout_marginTop="0dp"
+            android:layout_marginLeft="10dp"
+            android:fontFamily="@font/poppins_regular"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:layout_toEndOf="@+id/txtorder_id_detail_myorder"
+            android:layout_below="@+id/judul_toolbar_detail_myorder"
+            android:id="@+id/order_id_detail_myorder"
+            android:text="1589898998"
+            android:textColor="@color/bgBlack"
+            android:textSize="12sp"
+            android:layout_marginTop="0dp"
+            android:layout_marginLeft="10dp"
+            android:fontFamily="@font/poppins_regular"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </RelativeLayout>
+    <!-- /Custome Topbar-->
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:paddingTop="10dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_medium"
+                android:text="Status Booking"
+                android:textColor="@color/gray.primary_dark"
+                android:textSize="15sp" />
+
+            <!--cardView Status Booking-->
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="30dp"
+                android:layout_marginTop="5dp"
+                app:cardBackgroundColor="@color/white"
+                app:cardCornerRadius="5dp"
+                app:cardElevation="5dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="15dp">
+
+                    <TextView
+                        android:id="@+id/status_booking_detail_myorder"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/border_text_alt"
+                        android:text="Berhasil"
+                        android:paddingTop="5dp"
+                        android:paddingBottom="5dp"
+                        android:paddingLeft="25dp"
+                        android:paddingRight="25dp"
+                        android:textColor="@color/bgBlack_alt"
+                        android:textSize="18sp" />
+                </RelativeLayout>
+            </android.support.v7.widget.CardView>
+            <!--/cardView Status Booking-->
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_medium"
+                android:text="Detail Lapangan"
+                android:textColor="@color/gray.primary_dark"
+                android:textSize="15sp" />
+
+            <!--cardView Detail Lapangan-->
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="30dp"
+                android:layout_marginTop="5dp"
+                app:cardBackgroundColor="@color/white"
+                app:cardCornerRadius="5dp"
+                app:cardElevation="5dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp">
+
+                    <TextView
+                        android:id="@+id/nama_lap_detail_myorder"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="5dp"
+                        android:text="Nama Lapangan"
+                        android:textColor="@color/bgBlack_alt"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/nama_mitra_detail_myorder"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/nama_lap_detail_myorder"
+                        android:text="Nama Mitra"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/separator1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/nama_lap_detail_myorder"
+                        android:layout_toEndOf="@id/nama_mitra_detail_myorder"
+                        android:text="  -  "
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/tgl_detail_myorder"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/nama_lap_detail_myorder"
+                        android:layout_toEndOf="@id/separator1"
+                        android:text="Sel, 19 Mar 2019"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/separator2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/nama_lap_detail_myorder"
+                        android:layout_toEndOf="@id/tgl_detail_myorder"
+                        android:text="  |  "
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:id="@+id/jam_detail_myorder"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/nama_lap_detail_myorder"
+                        android:layout_toEndOf="@id/separator2"
+                        android:text="07:00"
+                        android:textSize="14sp" />
+                </RelativeLayout>
+            </android.support.v7.widget.CardView>
+            <!--/cardView Detail Lapangan-->
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_medium"
+                android:text="Detail Pemesan"
+                android:textColor="@color/gray.primary_dark"
+                android:textSize="15sp" />
+
+            <!--cardView Detail Pemesan-->
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="30dp"
+                android:layout_marginTop="5dp"
+                app:cardBackgroundColor="@color/white"
+                app:cardCornerRadius="5dp"
+                app:cardElevation="5dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="10dp">
+
+                    <TextView
+                        android:id="@+id/txtnama_detail_myorder"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="5dp"
+                        android:text="Ambrosius Ama Tuan"
+                        android:textColor="@color/bgBlack_alt"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/txtemail_detail_myorder"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="15dp"
+                        android:text="tuanama7@gmail.com" />
+
+                    <TextView
+                        android:id="@+id/txtkontak_detail_myorder"
+                        android:textSize="15sp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="082250483021" />
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+            <!--/cardView Detail Pemesan-->
+
+
+            <!--<Button-->
+                <!--android:id="@+id/btn_pembayaran"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_margin="15dp"-->
+                <!--android:background="@drawable/ripple_btn"-->
+                <!--android:padding="5dp"-->
+                <!--android:text="Lanjutkan Ke Pembayaran"-->
+                <!--android:textColor="@color/bgWhite_alt"-->
+                <!--android:textSize="16sp" />-->
+
+            <!--<Button-->
+            <!--android:id="@+id/btn_pembayaran_indomaret"-->
+            <!--android:layout_margin="15dp"-->
+            <!--android:padding="5dp"-->
+            <!--android:background="@drawable/ripple_btn"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:textSize="16sp"-->
+            <!--android:textColor="@color/bgWhite_alt"-->
+            <!--android:text="Lanjutkan Ke Pembayaran"/>-->
+
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

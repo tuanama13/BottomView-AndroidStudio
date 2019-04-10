@@ -19,6 +19,7 @@
         android:layout_height="60dp">
 
         <ImageButton
+            android:layout_marginLeft="10dp"
             android:layout_marginTop="15dp"
             android:id="@+id/order_back"
             android:src="@drawable/ico_back"
@@ -41,176 +42,189 @@
     <!-- /Custome Topbar-->
 
     <ScrollView
-        android:paddingTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:paddingLeft="10dp"
         android:paddingRight="10dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-    <LinearLayout
-        android:orientation="vertical"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <TextView
-            android:text="Detail Lapangan"
-            android:textSize="17sp"
-            android:fontFamily="@font/poppins_medium"
-            android:textColor="@color/bgBlack_alt"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-        <!--cardView Detail Lapangan-->
-        <android.support.v7.widget.CardView
-            android:layout_marginTop="5dp"
-            android:layout_marginBottom="30dp"
-            app:cardElevation="2dp"
-            app:cardCornerRadius="5dp"
-            app:cardBackgroundColor="@color/bgWhite"
+        android:paddingTop="10dp">
+
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_medium"
+                android:text="Detail Lapangan"
+                android:textColor="@color/bgBlack_alt"
+                android:textSize="17sp" />
+            <!--cardView Detail Lapangan-->
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="30dp"
+                android:layout_marginTop="5dp"
+                app:cardBackgroundColor="@color/bgWhite"
+                app:cardCornerRadius="5dp"
+                app:cardElevation="2dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp">
+
+                    <TextView
+                        android:id="@+id/nama_lap_detail"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="5dp"
+                        android:text="Nama Lapangan"
+                        android:textColor="@color/bgBlack_alt"
+                        android:textSize="17sp" />
+
+                    <TextView
+                        android:id="@+id/nama_mitra_detail"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/nama_lap_detail"
+                        android:text="Nama Mitra"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:id="@+id/separator1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/nama_lap_detail"
+                        android:layout_toEndOf="@id/nama_mitra_detail"
+                        android:text="  -  "
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:id="@+id/tgl_detail"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/nama_lap_detail"
+                        android:layout_toEndOf="@id/separator1"
+                        android:text="Sel, 19 Mar 2019"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:id="@+id/separator2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/nama_lap_detail"
+                        android:layout_toEndOf="@id/tgl_detail"
+                        android:text="  |  "
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:id="@+id/jam_detail"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/nama_lap_detail"
+                        android:layout_toEndOf="@id/separator2"
+                        android:text="07:00"
+                        android:textSize="12sp" />
+                </RelativeLayout>
+            </android.support.v7.widget.CardView>
+            <!--/cardView Detail Lapangan-->
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_medium"
+                android:text="Detail Pemesan"
+                android:textColor="@color/bgBlack_alt"
+                android:textSize="17sp" />
+
+            <!--cardView Detail Pemesan-->
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="30dp"
+                android:layout_marginTop="5dp"
+                app:cardBackgroundColor="@color/bgWhite"
+                app:cardCornerRadius="5dp"
+                app:cardElevation="2dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="10dp">
+
+                    <TextView
+                        android:id="@+id/txtnama_detail"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="5dp"
+                        android:text="Ambrosius Ama Tuan"
+                        android:textColor="@color/bgBlack_alt"
+                        android:textSize="15sp" />
+
+                    <TextView
+                        android:id="@+id/txtemail_detail"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="tuanama7@gmail.com" />
+
+                    <TextView
+                        android:id="@+id/txtkontak_detail"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="082250483021" />
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+            <!--/cardView Detail Pemesan-->
 
             <RelativeLayout
-                android:layout_margin="10dp"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-                <TextView
-                    android:id="@+id/nama_lap_detail"
-                    android:text="Nama Lapangan"
-                    android:textSize="17sp"
-                    android:layout_marginBottom="5dp"
-                    android:textColor="@color/bgBlack_alt"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
-                <TextView
-                    android:layout_below="@id/nama_lap_detail"
-                    android:id="@+id/nama_mitra_detail"
-                    android:text="Nama Mitra"
-                    android:textSize="12sp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
-                <TextView
-                    android:layout_toEndOf="@id/nama_mitra_detail"
-                    android:layout_below="@id/nama_lap_detail"
-                    android:id="@+id/separator1"
-                    android:text="  -  "
-                    android:textSize="12sp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
-                <TextView
-                    android:layout_toEndOf="@id/separator1"
-                    android:layout_below="@id/nama_lap_detail"
-                    android:id="@+id/tgl_detail"
-                    android:text="Sel, 19 Mar 2019"
-                    android:textSize="12sp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
-                <TextView
-                    android:layout_toEndOf="@id/tgl_detail"
-                    android:layout_below="@id/nama_lap_detail"
-                    android:id="@+id/separator2"
-                    android:text="  |  "
-                    android:textSize="12sp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
-                <TextView
-                    android:layout_toEndOf="@id/separator2"
-                    android:layout_below="@id/nama_lap_detail"
-                    android:id="@+id/jam_detail"
-                    android:textSize="12sp"
-                    android:text="07:00"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
-            </RelativeLayout>
-        </android.support.v7.widget.CardView>
-        <!--/cardView Detail Lapangan-->
-
-        <TextView
-            android:text="Detail Pemesan"
-            android:textSize="17sp"
-            android:fontFamily="@font/poppins_medium"
-            android:textColor="@color/bgBlack_alt"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-
-        <!--cardView Detail Pemesan-->
-        <android.support.v7.widget.CardView
-            android:layout_marginTop="5dp"
-            android:layout_marginBottom="30dp"
-            app:cardElevation="2dp"
-            app:cardCornerRadius="5dp"
-            app:cardBackgroundColor="@color/bgWhite"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-            <LinearLayout
-                android:padding="10dp"
-                android:orientation="vertical"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-                <TextView
-                    android:id="@+id/txtnama_detail"
-                    android:text="Ambrosius Ama Tuan"
-                    android:textColor="@color/bgBlack_alt"
-                    android:textSize="15sp"
-                    android:layout_marginBottom="5dp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
-                <TextView
-                    android:id="@+id/txtemail_detail"
-                    android:text="tuanama7@gmail.com"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
-                <TextView
-                    android:id="@+id/txtkontak_detail"
-                    android:text="082250483021"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
-            </LinearLayout>
-
-        </android.support.v7.widget.CardView>
-        <!--/cardView Detail Pemesan-->
-
-            <RelativeLayout
-                android:padding="10dp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:padding="10dp">
 
                 <TextView
                     android:id="@+id/total_detail"
-                    android:text="Total"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:fontFamily="@font/poppins_medium"
-                    android:textSize="20sp"
+                    android:text="Total"
                     android:textColor="@color/bgBlack_alt"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
-                <TextView
-                    android:text="Rp "
-                    android:layout_toStartOf="@id/harga_lap_detail"
-                    android:textSize="20sp"
-                    android:textColor="@color/colorPrimaryDark"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
+                    android:textSize="20sp" />
 
                 <TextView
-                    android:layout_alignParentRight="true"
-                    android:id="@+id/harga_lap_detail"
-                    android:textSize="20sp"
-                    android:textColor="@color/colorPrimaryDark"
-                    android:text="60.000"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:layout_toStartOf="@id/harga_lap_detail"
+                    android:text="Rp "
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/harga_lap_detail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:text="60.000"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="20sp" />
 
             </RelativeLayout>
 
-        <Button
-            android:id="@+id/btn_pembayaran"
-            android:layout_margin="15dp"
-            android:padding="5dp"
-            android:background="@drawable/ripple_btn"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textSize="16sp"
-            android:textColor="@color/bgWhite_alt"
-            android:text="Lanjutkan Ke Pembayaran"/>
+            <Button
+                android:id="@+id/btn_pembayaran"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="15dp"
+                android:background="@drawable/ripple_btn"
+                android:padding="5dp"
+                android:text="Lanjutkan Ke Pembayaran"
+                android:textColor="@color/bgWhite_alt"
+                android:textSize="16sp" />
 
-        <!--<Button-->
+            <!--<Button-->
             <!--android:id="@+id/btn_pembayaran_indomaret"-->
             <!--android:layout_margin="15dp"-->
             <!--android:padding="5dp"-->
@@ -222,7 +236,6 @@
             <!--android:text="Lanjutkan Ke Pembayaran"/>-->
 
 
-
-    </LinearLayout>
+        </LinearLayout>
     </ScrollView>
 </LinearLayout>

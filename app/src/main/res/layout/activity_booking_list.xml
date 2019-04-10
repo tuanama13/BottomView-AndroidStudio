@@ -104,16 +104,10 @@
                     android:layout_height="match_parent">
 
                 </android.support.v7.widget.RecyclerView>
+                <!--/RecylerView-->
             </RelativeLayout>
-
         </android.support.v7.widget.CardView>
-
+        <!--/CardView-->
     </ScrollView>
-
-
-
-
-
-
 
 </LinearLayout>

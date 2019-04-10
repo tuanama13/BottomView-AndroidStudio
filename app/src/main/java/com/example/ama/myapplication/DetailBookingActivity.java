@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -61,6 +62,8 @@ public class DetailBookingActivity extends AppCompatActivity implements Transact
     TextView txtKontakDetail;
     @BindView(R.id.btn_pembayaran)
     Button btnPembayaran;
+    @BindView(R.id.order_back)
+    ImageView _back;
 //    @BindView(R.id.btn_pembayaran_indomaret)
 //    Button btnPembayaranIndo;
 //    public String order_id;
@@ -106,6 +109,13 @@ public class DetailBookingActivity extends AppCompatActivity implements Transact
         id_mitra = bundle.getString("id_mitra");
         txtNamaMitra.setText(bundle.getString("nama_mitra"));
         txtJamBookingDetail.setText(bundle.getString("jam_booking"));
+
+        _back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
 
 
         SdkUIFlowBuilder.init()
@@ -228,6 +238,9 @@ public class DetailBookingActivity extends AppCompatActivity implements Transact
 
     private void createBookingnya() {
 //        Gson gson = new GsonBuilder() .setLenient() .create();
+        if (status_booking=="pending"){
+            status_booking = "Belum Bayar";
+        }
 
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(URL)

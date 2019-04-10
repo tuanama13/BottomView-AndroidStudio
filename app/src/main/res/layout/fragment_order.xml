@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:id="@+id/LLayout"
     android:orientation="vertical"
     tools:context=".OrderFragment">
 
@@ -67,6 +68,14 @@
 
     <!--</RelativeLayout>-->
 
+    <android.support.v4.widget.SwipeRefreshLayout
+        android:id="@+id/SWLayout"
+        android:layout_marginBottom="55dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -123,6 +132,6 @@
             </android.support.v7.widget.RecyclerView>
         </RelativeLayout>
     </ScrollView>
-
+    </android.support.v4.widget.SwipeRefreshLayout>
 
 </LinearLayout>

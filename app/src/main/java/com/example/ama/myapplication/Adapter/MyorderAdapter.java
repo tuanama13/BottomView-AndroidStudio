@@ -60,11 +60,24 @@ public class MyorderAdapter extends RecyclerView.Adapter<MyorderAdapter.ViewHold
         holder.txtJamBookingMyorder.setText(datas.getJamBooking());
         holder.txtNamaLapMyorder.setText(datas.getNamaLapangan());
         holder.txtStatusMyoder.setText(datas.getStatusBooking());
+        holder.txtTglBookingMyorder.setText(datas.getTglBooking());
 
         holder.cardMyorder.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(context, MyOrderDetailActivity.class);
+                intent.putExtra("id_booking", datas.getIdBooking());
+                intent.putExtra("id_mitra", datas.getIdMitra());
+                intent.putExtra("nama_mitra", datas.getNamaMitra());
+                intent.putExtra("id_lapangan", datas.getIdLapangan());
+                intent.putExtra("nama_lap", datas.getNamaLapangan());
+                intent.putExtra("id_user", datas.getIdUser());
+                intent.putExtra("harga_lap", datas.getHargaLapagan());
+                intent.putExtra("jumlah_jam", datas.getJumlahJam());
+                intent.putExtra("tgl_booking", datas.getTglBooking());
+                intent.putExtra("jam_booking", datas.getJamBooking());
+                intent.putExtra("status_booking", datas.getStatusBooking());
+                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 context.startActivity(intent);
             }
         });
@@ -105,6 +118,8 @@ public class MyorderAdapter extends RecyclerView.Adapter<MyorderAdapter.ViewHold
         TextView txtStatusMyoder;
         @BindView(R.id.card_myoder)
         CardView cardMyorder;
+        @BindView(R.id.tgl_booking_myorder)
+        TextView txtTglBookingMyorder;
 
 
         public ViewHolder(@NonNull View itemView) {

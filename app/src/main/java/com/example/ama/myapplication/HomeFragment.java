@@ -34,7 +34,7 @@ public class HomeFragment extends Fragment {
                 Intent intent = new Intent(getActivity(), Order_1.class);
                 intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 getActivity().startActivity(intent);
-                getActivity().overridePendingTransition(android.R.anim.slide_in_left, android.R.anim.slide_out_right);
+                getActivity().overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
 
             }
         });

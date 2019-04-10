@@ -17,6 +17,7 @@
         android:layout_height="60dp">
 
         <ImageButton
+            android:layout_marginLeft="10dp"
             android:layout_marginTop="15dp"
             android:id="@+id/order_back"
             android:src="@drawable/ico_back"
@@ -25,13 +26,13 @@
             android:layout_height="30dp" />
 
         <TextView
-            android:layout_toRightOf="@+id/order_back"
+            android:layout_toEndOf="@+id/order_back"
             android:id="@+id/judul_toolbar_tentang"
             android:text="Tentang"
             android:textColor="@color/bgBlack"
             android:textSize="20sp"
             android:layout_marginTop="15dp"
-            android:layout_marginLeft="10dp"
+            android:layout_marginStart="10dp"
             android:fontFamily="@font/poppins_regular"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
