@@ -5,19 +5,44 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.CardView;
+import android.support.v7.widget.DefaultItemAnimator;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
+import com.ethanhua.skeleton.Skeleton;
+import com.ethanhua.skeleton.SkeletonScreen;
+import com.example.ama.myapplication.Adapter.MyorderAdapter;
+import com.example.ama.myapplication.Adapter.TipsAdapter;
+import com.example.ama.myapplication.Myoder.Data;
+import com.example.ama.myapplication.Tips.Value;
+import com.example.ama.myapplication.service.APIService;
+
+import java.util.ArrayList;
+import java.util.List;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
 
 
 public class HomeFragment extends Fragment {
 
     @BindView(R.id.btn_pesan) CardView _btnOrder;
 //    @BindView(R.id.button2) Button button2;
+    @BindView(R.id.recycleView_tips) RecyclerView recyclerView;
+
+    private TipsAdapter tipsAdapter;
+    public static final String URL = "http://airless-shout.000webhostapp.com/";
+    private List<com.example.ama.myapplication.Tips.Data> data = new ArrayList<>();
 
     @Nullable
     @Override
@@ -39,7 +64,47 @@ public class HomeFragment extends Fragment {
             }
         });
 
+
+        tipsAdapter = new TipsAdapter(getActivity().getApplicationContext(), data);
+        RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getActivity(),LinearLayoutManager.HORIZONTAL,false);
+        recyclerView.setAdapter(tipsAdapter);
+        recyclerView.setLayoutManager(mLayoutManager);
+        recyclerView.setItemAnimator(new DefaultItemAnimator());
+
+//        final SkeletonScreen skeletonScreen = Skeleton.bind(recyclerView)
+//                .adapter(tipsAdapter)
+//                .load(R.layout.item_skeleton_news)
+//                .show();
+
+        loadTips();
+
         return rootView;
+    }
+
+    private void loadTips() {
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl(URL)
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
+
+        final APIService api = retrofit.create(APIService.class);
+        Call<Value> call = api.viewTips();
+        call.enqueue(new Callback<Value>() {
+            @Override
+            public void onResponse(Call<Value> call, Response<Value> response) {
+                data = response.body().getData();
+                String tes = Integer.toString(data.size());
+                tipsAdapter = new TipsAdapter(getActivity(), data);
+                tipsAdapter.notifyDataSetChanged();
+                recyclerView.setAdapter(tipsAdapter);
+                response.isSuccessful();
+            }
+
+            @Override
+            public void onFailure(Call<Value> call, Throwable t) {
+                Log.d("Error", "onFailure: "+t);
+            }
+        });
     }
 
 

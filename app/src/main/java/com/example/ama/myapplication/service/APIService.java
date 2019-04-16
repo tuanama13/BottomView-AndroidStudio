@@ -37,4 +37,7 @@ public interface APIService {
     @GET("api/booking/read_booking_history.php")
     Call<Message> viewMyorderHistoryMessage(@QueryMap HashMap<String, String> params);
 
+    @GET("api/tips/read.php")
+    Call<com.example.ama.myapplication.Tips.Value> viewTips();
+
 }
