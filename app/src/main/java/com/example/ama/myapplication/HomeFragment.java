@@ -13,6 +13,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 
 import com.ethanhua.skeleton.Skeleton;
 import com.ethanhua.skeleton.SkeletonScreen;
@@ -21,6 +22,8 @@ import com.example.ama.myapplication.Adapter.TipsAdapter;
 import com.example.ama.myapplication.Myoder.Data;
 import com.example.ama.myapplication.Tips.Value;
 import com.example.ama.myapplication.service.APIService;
+import com.synnapps.carouselview.CarouselView;
+import com.synnapps.carouselview.ImageListener;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -37,8 +40,12 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class HomeFragment extends Fragment {
 
     @BindView(R.id.btn_pesan) CardView _btnOrder;
+//    @BindView(R.id.carouselView) CarouselView _carouselImg;
 //    @BindView(R.id.button2) Button button2;
     @BindView(R.id.recycleView_tips) RecyclerView recyclerView;
+
+    CarouselView carouselView;
+    int[] sampleImages = {R.drawable.img1, R.drawable.img2, R.drawable.img3};
 
     private TipsAdapter tipsAdapter;
     public static final String URL = "http://airless-shout.000webhostapp.com/";
@@ -78,8 +85,24 @@ public class HomeFragment extends Fragment {
 
         loadTips();
 
+        
+//        carouselView = (CarouselView) rootView.findViewById(R.id.carouselImg);
+        carouselView.setPageCount(sampleImages.length);
+        carouselView.setImageListener(imageListener);
+
+
+
+
         return rootView;
     }
+
+    ImageListener imageListener = new ImageListener() {
+        @Override
+        public void setImageForPosition(int position, ImageView imageView) {
+            imageView.setImageResource(sampleImages[position]);
+        }
+    };
+
 
     private void loadTips() {
         Retrofit retrofit = new Retrofit.Builder()

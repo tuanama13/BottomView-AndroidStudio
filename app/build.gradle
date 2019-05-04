@@ -63,6 +63,7 @@ dependencies {
     implementation 'com.ethanhua:skeleton:1.1.2'
     implementation 'io.supercharge:shimmerlayout:2.1.0'
     implementation 'com.github.ganfra:material-spinner:2.0.0'
+    implementation 'com.synnapps:carouselview:0.1.5'
     implementation 'com.midtrans:uikit:1.21.2-SANDBOX'
 //    implementation 'ai.devsupportmidtrans'
     sandboxImplementation 'com.midtrans:uikit:1.21.2-SANDBOX'

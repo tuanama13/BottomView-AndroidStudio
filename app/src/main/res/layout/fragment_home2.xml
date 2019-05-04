@@ -39,15 +39,17 @@
         </RelativeLayout>
         <!-- /Custome Topbar-->
 
-        <ImageView
-            android:scaleType="fitXY"
-            android:layout_gravity="center_horizontal"
-            android:adjustViewBounds="true"
-            android:layout_marginTop="20dp"
-            android:src="@drawable/img1"
+        <com.synnapps.carouselview.CarouselView
+            android:id="@+id/carouselImg"
             android:layout_width="match_parent"
-            android:layout_height="250dp"
-            />
+            android:layout_height="200dp"
+            android:layout_marginTop="10dp"
+            app:fillColor="#FFFFFFFF"
+            app:pageColor="#00000000"
+            app:radius="6dp"
+            app:slideInterval="3000"
+            app:strokeColor="#FF777777"
+            app:strokeWidth="1dp"/>
 
         <GridLayout
             android:columnCount="2"
